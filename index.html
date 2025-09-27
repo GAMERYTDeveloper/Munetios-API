@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Munetios API's</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Material Symbols -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
+    <style>
+        body {
+            font-family: Poppins, Arial, sans-serif;
+            background-color: #070524;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+        .topbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(4px);
+            border-radius: 30px;
+            margin: 20px;
+            position: sticky;
+            top: 0;
+        }
+        .logo h1 {
+            margin: 0;
+            font-size: 24px;
+            font-weight: 600;
+        }
+        .navbar {
+            display: flex;
+            gap: 15px;
+        }
+
+        select{
+            background-color: #070524;
+            color: white;
+            border: 1px solid #ffffff;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 16px; 
+        }
+        .item {
+            cursor: pointer;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .item:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        .content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        pre {
+            background-color: #1a1a2e;
+            color: #ffffff;
+            padding: 30px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-family: 'Courier New', Courier, monospace;
+            margin-top: 20px;
+        }
+        code {
+            color: #00ffcc;
+        }
+   
+
+      
+      
+    .content .sidebar {
+        position: fixed;
+        top: 88px;
+        left: 0;
+        width: 200px;
+        height: calc(100% - 88px);
+        background: rgba(22, 0, 83, 0.6) !important; 
+        backdrop-filter: blur(8px);
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+        padding: 24px 18px;
+        box-shadow: 4px 0 24px 0 rgba(31, 38, 135, 0.25);
+        z-index: 10;
+        transition: background 0.3s, box-shadow 0.3s;
+    }
+    .content .sidebar ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    .content .sidebar li {
+        margin-bottom: 18px;
+    }
+    .content .sidebar a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 17px;
+        padding: 8px 12px;
+        border-radius: 8px;
+        display: block;
+        transition: background 0.2s, color 0.2s;
+    }
+    .content .sidebar a:hover {
+        background: rgba(0,255,204,0.13);
+        color: #00ffcc;
+    }
+        .content#docs {
+            margin-left: 220px;
+        }
+
+        @media (max-width: 992px) {
+            .navbar {
+                display: none;
+            }
+            #mobileNavigation {
+                display: block;
+            }
+
+            .sidebar {
+                display: none;
+            }
+            .content#docs {
+                margin-left: 0;
+            }
+        }
+        @media (min-width: 993px) {
+            #mobileNavigation {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="topbar">
+        <div class="logo">
+            <h1>Munetios API's</h1>
+        </div>
+        <div class="navbar">
+            <div class="item" id="home">Home</div>
+            <div class="item" id="beauticss">Beautiful CSS API</div>
+           <div class="item" id="betterHtml">Better HTML API</div>
+           <div class="item" id="docs">Documentation</div>
+        </div>
+        <select id="mobileNavigation">
+            <option value="home">Home</option>
+            <option value="beauticss">Beautiful CSS API</option>
+            <option value="betterHtml">Better HTML API</option>
+            <option value="docs">Documentation</option>
+        </select>
+    </header>
+    <div class="content">
+        <h1>Munetios API's</h1>
+        <p>This is where you can use/copy the API's</p>
+        <p>Click on the items in the top bar to navigate through the APIs.</p>
+        <p>For more information, check the documentation.</p>
+    </div>
+    <div class="content" id="beauticss">
+        <h2>Beautiful CSS API</h2>
+        <p>This API allows you to generate beautiful CSS styles for your web projects.</p>
+        <p>Use it to enhance the visual appeal of your websites with ease.</p>
+        <div style="position: relative; max-width: 100%; display: inline-block;">
+            <pre style="margin:0; max-width: 100%; overflow-x: auto;"><code id="beauticssCode">&lt;link rel="stylesheet" href="https://api.munetios.com/beautiful-css/beautiful.css"&gt;</code></pre>
+            <span id="copyBeauticss" title="Copy" style="position: absolute; top: 10px; right: 10px; cursor: pointer; color: #00ffcc; font-size: 22px;" class="material-symbols-outlined">content_copy</span>
+        </div>
+        <script>
+            document.getElementById('copyBeauticss').onclick = function() {
+            const code = document.getElementById('beauticssCode').innerText;
+            navigator.clipboard.writeText(code);
+            this.innerText = 'check';
+            setTimeout(() => { this.innerText = 'content_copy'; }, 1200);
+            };
+        </script>
+    </div>
+    <div class="content" id="betterHtml">
+        <h2>Better HTML API</h2>
+        <p>This API provides tools to enhance your HTML coding experience.</p>
+        <p>Use it to simplify your HTML structure and improve readability.</p>
+        <div style="position: relative; max-width: 100%; display: inline-block;">
+            <pre style="margin:0; max-width: 100%; overflow-x: auto;"><code id="betterHtmlCode">&lt;link rel="stylesheet" href="https://api.munetios.com/better-html/html.css"&gt;</code></pre>
+            <span id="copyBetterHtml" title="Copy" style="position: absolute; top: 10px; right: 10px; cursor: pointer; color: #00ffcc; font-size: 22px;" class="material-symbols-outlined">content_copy</span>
+        </div>
+        <script>
+            document.getElementById('copyBetterHtml').onclick = function() {
+            const code = document.getElementById('betterHtmlCode').innerText;
+            navigator.clipboard.writeText(code);
+            this.innerText = 'check';
+            setTimeout(() => { this.innerText = 'content_copy'; }, 1200);
+            };
+        </script>
+    </div>
+    <div class="content" id="docs">
+        <div class="sidebar">
+            <ul>
+                <li><a href="#home1">Home</a></li>
+                <li><a href="#beauticss">Beautiful CSS API</a></li>
+                <li><a href="#betterHtml">Better HTML API</a></li>
+            </ul>
+        </div>
+        <h2>Documentation</h2>
+        <section id="home1">
+            <h3>Home</h3>
+            <p>Welcome to the Munetios API documentation. Here you will find information about the available APIs and how to use them.</p>
+            <p>Feel free to explore the different sections to learn more about each API.</p>
+            <p>
+            Munetios provides a collection of APIs designed to help developers quickly add beautiful styles and improved HTML structures to their web projects. Our APIs are easy to integrate, require no registration, and are free to use for personal and commercial projects.
+            </p>
+            <ul>
+            <li><strong>Beautiful CSS API:</strong> Instantly apply modern, visually appealing CSS styles to your website with a single line of code.</li>
+            <li><strong>Better HTML API:</strong> Enhance your HTML markup for better readability and maintainability, making your code cleaner and easier to work with.</li>
+            </ul>
+            <p>
+            <strong>Getting Started:</strong>
+            <ol>
+                <li>Choose the API you want to use from the navigation bar above.</li>
+                <li>Copy the provided <code>&lt;link&gt;</code> tag and paste it into the <code>&lt;head&gt;</code> section of your HTML file.</li>
+                <li>Refresh your website to see the changes instantly.</li>
+            </ol>
+            </p>
+            <p>
+            For detailed usage instructions, code examples, and advanced customization options, visit the documentation sections for each API. If you have questions or need support, please refer to our FAQ or contact us through our support channels.
+            </p>
+            <p>
+            <em>Thank you for choosing Munetios APIs to enhance your web development workflow!</em>
+            </p>
+        </section>
+        <section id="beauticss">
+            <h3>Beautiful CSS API</h3>
+            <p>You can use the "liquid-glass" class name to make transparency effects easily. You can use blur-xs, blur-sm, blur-md, blur-lg, blur-xl, blur-2xl, and blur-3xl to apply different levels of blur to your elements. You can use transparency, transparency-xs, transparency-sm, transparency-md, transparency-lg, transparency-xl, transparency-2xl, and transparency-3xl to apply different levels of transparency to your elements.</p>
+        </section>
+        <section id="betterHtml">
+            <h3>Better HTML API</h3>
+            <p>This API provides tools to enhance your HTML coding experience.</p>
+            <p>Use it to simplify your HTML structure and improve readability.</p>
+            <p>You can use <code>&lt;card&gt;</code> and <code>&lt;cards&gt;</code> to make row of cards.</p>
+            <p>You can also use <code>&lt;topbar&gt;</code> to create a top navigation bar.</p>
+            <p>Also you can use <code>&lt;logo&gt;</code> to create a logo element.</p>
+        </section>
+    </div>
+    <script>
+        function showSection(sectionId) {
+            // Hide all .content sections except the header one
+            document.querySelectorAll('.content').forEach(function(el, idx) {
+                if (idx === 0) {
+                    el.style.display = sectionId === 'home' ? '' : 'none';
+                } else {
+                    el.style.display = el.id === sectionId ? '' : 'none';
+                }
+            });
+        }
+
+        // Desktop navigation
+        document.querySelectorAll('.navbar .item').forEach(function(item) {
+            item.addEventListener('click', function() {
+                showSection(this.id);
+            });
+        });
+
+        // Mobile navigation
+        document.getElementById('mobileNavigation').addEventListener('change', function() {
+            showSection(this.value);
+        });
+
+        // Show home by default
+        showSection('home');
+    </script>
+</body>
+</html>
